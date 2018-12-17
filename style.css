@@ -1,0 +1,34 @@
+/*
+added the container that holds the grid to manipulate the css.
+made it appear more like the etch-a-sketch board.
+*/
+.container {
+  width: 400px;
+  height: 400px;
+  
+  margin-top:50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  background: "white";
+}
+
+
+
+.row{
+  border:1px solid red;
+  height: 1em;
+  line-height: 1em;
+  overflow:hidden;
+}
+
+.box{
+   overflow:hidden;
+  display: inline-block;
+  width: 6.25%;
+  height: 1em;
+  box-sizing: border-box;
+  border:1px solid red;
+  
+}
+
