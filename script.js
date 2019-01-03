@@ -10,6 +10,16 @@ the functionality of the grid needs to be put into the same windows.onload funct
 //turn makeGrid into a giant object of functions to hold everything.
 
 
+function getRandomColor(){
+ var letters = "0123456789ABCDEF";
+ var color = '#';
+ for(var i=0; i <6; i++){
+   color += letters[Math.floor(Math.random() *16)];
+ }
+ return color;
+}
+
+
 var makeGrid = window.onload = function(){
   var createGrid = prompt("How many rows do you want?");
   var number = parseInt(createGrid);
@@ -30,17 +40,28 @@ var makeGrid = window.onload = function(){
        container.appendChild(row);
        
   }
-  //adds color when you mouse over a square.
-    document.addEventListener("mouseover",(e)=>{
+  //adds red when you mouse over a square.
+  document.addEventListener("mouseover",(e)=>{
         if(!e.target.classList.contains("box")){
             return;
             }
             e.target.style.background = "#3d3d3d";
         });
+        
+  //adds a random color when you mouse over a square.
+  document.getElementById('rainbowColor').addEventListener('click', ()=>{
+    document.addEventListener("mouseover", (e)=>{
+      if(!e.target.classList.contains("box")){
+        return
+      }
+      e.target.style.background = getRandomColor();
+    })
+    
+  })
   //removes color when you click the clear button.
     document.getElementById('clearBtn').addEventListener('click', () =>{
-          const reds = document.querySelectorAll('#box[style*= "background"]');
-          reds.forEach(red => red.removeAttribute('style'));
+          const colors = document.querySelectorAll('#box[style*= "background"]');
+          colors.forEach(color => color.removeAttribute('style'));
           });
               return container;
         }

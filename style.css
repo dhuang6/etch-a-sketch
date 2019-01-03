@@ -1,34 +1,39 @@
 /*
 added the container that holds the grid to manipulate the css.
-made it appear more like the etch-a-sketch board.
+you need to double check the order of the divs buttons was in the way of .row and preventing the css from working.
 */
-.container {
-  width: 400px;
-  height: 400px;
-  
+body {
+  text-align:center;
+}
+
+#container {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
   margin-top:50px;
   margin-left: auto;
   margin-right: auto;
-  
   background: "white";
+  overflow:hidden;
+  box-sizing: border-box;
 }
 
+/*
 
-
+there is a bit of extra space being generated on the right side of the grid.
+row seems to be causing the issue will need to review.
+Checked the grid creation which seems to be fine.
+*/
 .row{
-  border:1px solid red;
-  height: 1em;
-  line-height: 1em;
-  overflow:hidden;
+line-height: 0;
+  
 }
 
 .box{
-   overflow:hidden;
   display: inline-block;
-  width: 6.25%;
-  height: 1em;
+  width: 15px;
+  height: 15px;
+  border: 1px solid red;
   box-sizing: border-box;
-  border:1px solid red;
-  
+  margin:0;
 }
-
