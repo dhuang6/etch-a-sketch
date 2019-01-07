@@ -10,14 +10,6 @@ the functionality of the grid needs to be put into the same windows.onload funct
 //turn makeGrid into a giant object of functions to hold everything.
 
 
-function getRandomColor(){
- var letters = "0123456789ABCDEF";
- var color = '#';
- for(var i=0; i <6; i++){
-   color += letters[Math.floor(Math.random() *16)];
- }
- return color;
-}
 
 
 var makeGrid = window.onload = function(){
@@ -40,24 +32,26 @@ var makeGrid = window.onload = function(){
        container.appendChild(row);
        
   }
-  //adds red when you mouse over a square.
+  //adds black when you mouse over a square.
+  document.getElementById('black').addEventListener('click',()=>{
   document.addEventListener("mouseover",(e)=>{
         if(!e.target.classList.contains("box")){
             return;
             }
             e.target.style.background = "#3d3d3d";
         });
+  });
         
   //adds a random color when you mouse over a square.
   document.getElementById('rainbowColor').addEventListener('click', ()=>{
     document.addEventListener("mouseover", (e)=>{
       if(!e.target.classList.contains("box")){
-        return
+        return;
       }
       e.target.style.background = getRandomColor();
-    })
+    });
     
-  })
+  });
   //removes color when you click the clear button.
     document.getElementById('clearBtn').addEventListener('click', () =>{
           const colors = document.querySelectorAll('#box[style*= "background"]');
@@ -65,10 +59,6 @@ var makeGrid = window.onload = function(){
           });
               return container;
         }
-
-//create a grid
-
-//generates a grid with the original div container already on index.html you need to start messing with the code you work with to gain a better understanding of what it's doing
 
 
 
@@ -80,5 +70,13 @@ function resizeGrid(){
           makeGrid();
       }
 
+function getRandomColor(){
+ var letters = "0123456789ABCDEF";
+ var color = '#';
+ for(var i=0; i <6; i++){
+   color += letters[Math.floor(Math.random() *16)];
+ }
+ return color;
+}
 
 
