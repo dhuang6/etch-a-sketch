@@ -8,23 +8,19 @@ body {
 
 #container {
   display: inline-block;
-  width: 75%;
-  height: 75%;
+  width: auto;
+  height: auto;
   margin-top:50px;
   margin-left: auto;
   margin-right: auto;
   background: "white";
 }
 
-/*
 
-there is a bit of extra space being generated on the right side of the grid.
-row seems to be causing the issue will need to review.
-Checked the grid creation which seems to be fine.
-*/
 .row{
-line-height: 0;
-  
+  line-height: 0;
+  width: auto;
+  height: auto;  
 }
 
 .box{
